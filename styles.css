@@ -1,0 +1,298 @@
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+:root {
+  --max-width: 900px;
+  --gap: 0.75rem;
+  --muted: #6b6b6b;
+  --border: #d7d7d7;
+  --surface: #f7f7f7;
+  --bg-brand: #2f3e6e;
+  --bg-brand-dark: #1e2a4a;
+  --bg-brand-surface: #eef1f8;
+  --accent-gold: #c8a84b;
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+[hidden] { display: none !important; }
+
+/* ── Home button ─────────────────────────────────────────────────────────── */
+.home-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 1rem 0.55rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.home-btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+.home-btn:hover,
+.home-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-gold);
+  outline: none;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+header {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(160deg, var(--bg-brand-dark) 0%, var(--bg-brand) 100%);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.55);
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.header-logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  margin: 2.5rem auto 0;
+  opacity: 0.92;
+}
+
+header > h1 {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 2.75rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* ── Main ────────────────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  background: linear-gradient(180deg, var(--bg-brand-surface) 0%, #fff 15rem);
+}
+
+.outer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.intro-note {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 2.5rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ── Content Container ───────────────────────────────────────────────────── */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Policy Section ──────────────────────────────────────────────────────── */
+.policy-section {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--bg-brand-surface);
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--bg-brand);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--bg-brand);
+}
+
+/* ── Policy Content ──────────────────────────────────────────────────────── */
+.policy-content {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.policy-content p {
+  margin: 0 0 1.25rem;
+}
+
+.policy-content p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-content strong {
+  color: var(--bg-brand);
+  font-weight: 600;
+}
+
+.policy-content ul {
+  margin: 0.75rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+.policy-content li {
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+}
+
+.policy-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ── Contact Info ────────────────────────────────────────────────────────── */
+.contact-info {
+  background: var(--bg-brand-surface);
+  border-left: 4px solid var(--accent-gold);
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.contact-item {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-item:first-child {
+  margin-top: 0;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item strong {
+  color: var(--bg-brand);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.contact-item a {
+  color: var(--bg-brand);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+.contact-note {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+footer {
+  background: var(--bg-brand-dark);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 2px solid var(--accent-gold);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  header > h1 {
+    font-size: 1.75rem;
+    padding: 1rem 1rem 2rem;
+  }
+
+  .header-logo {
+    height: 56px;
+    margin: 2rem auto 0;
+  }
+
+  .policy-section {
+    padding: 1.5rem;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .policy-content {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    padding: 1.25rem;
+  }
+}
